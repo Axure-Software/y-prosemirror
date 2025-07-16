@@ -4,7 +4,7 @@
 
 import { createMutex } from 'lib0/mutex'
 import * as PModel from 'prosemirror-model'
-import { Plugin, TextSelection } from "prosemirror-state"; // eslint-disable-line
+import { Plugin, Selection, TextSelection } from "prosemirror-state"; // eslint-disable-line
 import * as math from 'lib0/math'
 import * as object from 'lib0/object'
 import * as set from 'lib0/set'
@@ -286,7 +286,12 @@ export class RecoverableSelection {
   }
 
   restore (pmbinding, doc) {
-    return this.selection.map(doc, new RecoveryMapping(pmbinding, this.records))
+    try {
+      return this.selection.map(doc, new RecoveryMapping(pmbinding, this.records))
+    } catch {
+      const $pos = doc.resolve(this.selection.anchor)
+      return Selection.near($pos)
+    }
   }
 
   valid () {
