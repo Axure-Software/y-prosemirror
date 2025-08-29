@@ -1,16 +1,12 @@
 {
-  "name": "y-prosemirror",
-  "version": "1.3.7",
+  "name": "@romansp/y-prosemirror",
+  "version": "1.3.7-fork.1",
   "description": "Prosemirror bindings for Yjs",
   "main": "./dist/y-prosemirror.cjs",
   "module": "./src/y-prosemirror.js",
   "type": "module",
   "types": "./dist/src/y-prosemirror.d.ts",
   "sideEffects": false,
-  "funding": {
-    "type": "GitHub Sponsors ❤",
-    "url": "https://github.com/sponsors/dmonad"
-  },
   "scripts": {
     "clean": "rm -rf dist",
     "dist": "npm run clean && rollup -c && tsc",
@@ -35,12 +31,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yjs/y-prosemirror.git"
+    "url": "git+https://github.com/Axure-Software/y-prosemirror.git"
   },
   "keywords": [
     "Yjs"
   ],
-  "author": "Kevin Jahns <kevin.jahns@protonmail.com>",
+  "author": "Axure Software",
+  "email": "support@axure.com",
   "license": "MIT",
   "standard": {
     "ignore": [
@@ -50,7 +47,7 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/yjs/y-prosemirror/issues"
+    "url": "https://github.com/Axure-Software/y-prosemirror/issues"
   },
   "homepage": "https://github.com/yjs/y-prosemirror#readme",
   "dependencies": {
@@ -61,7 +58,7 @@
     "prosemirror-state": "^1.2.3",
     "prosemirror-view": "^1.9.10",
     "y-protocols": "^1.0.1",
-    "yjs": "^13.5.38"
+    "yjs": "npm:@romansp/yjs@^13.6.27-beta.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -80,7 +77,10 @@
     "typescript": "^5.4.5",
     "y-protocols": "^1.0.5",
     "y-webrtc": "^10.2.0",
-    "yjs": "^13.5.38"
+    "yjs": "npm:@romansp/yjs@^13.6.27-beta.1"
+  },
+  "overrides": {
+    "yjs": "npm:@romansp/yjs@^13.6.27-beta.1"
   },
   "engines": {
     "npm": ">=8.0.0",
