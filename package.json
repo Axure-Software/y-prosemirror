@@ -1,6 +1,6 @@
 {
   "name": "@axure/y-prosemirror",
-  "version": "1.3.7-fork.3",
+  "version": "1.3.7-fork.4",
   "description": "Prosemirror bindings for Yjs",
   "main": "./dist/y-prosemirror.cjs",
   "module": "./src/y-prosemirror.js",
